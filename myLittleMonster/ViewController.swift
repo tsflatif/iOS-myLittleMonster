@@ -20,6 +20,10 @@ class ViewController: UIViewController {
     @IBOutlet weak var penalty2Img: UIImageView!
     @IBOutlet weak var penalty3Img: UIImageView!
     
+    @IBOutlet weak var resetBtn: UIButton!
+    
+    var transferText = ""
+    
     let DIM_ALPHA: CGFloat = 0.2
     let OPAQUE: CGFloat = 1.0
     let MAX_PENALTIES = 3
@@ -29,6 +33,7 @@ class ViewController: UIViewController {
     var monsterHappy = false
     var timer: NSTimer!
     var currentItem: UInt32 = 0
+    var characterType = ""
     
     var musicPlayer: AVAudioPlayer!
     var sfxBite: AVAudioPlayer!
@@ -41,6 +46,9 @@ class ViewController: UIViewController {
         
         foodImage.dropTarget = monsterImage
         heartImage.dropTarget = monsterImage
+        
+        
+        monsterImage.playIdleAnimation("\(transferText)Idle")
         
         penalty1Img.alpha = DIM_ALPHA
         penalty2Img.alpha = DIM_ALPHA
@@ -148,10 +156,25 @@ class ViewController: UIViewController {
     
     func gameOver() {
         timer.invalidate()
-        monsterImage.playDeadAnimation()
-        sfxDeath.play() 
+        monsterImage.playDeadAnimation("\(transferText)Dead")
+        sfxDeath.play()
+        heartImage.alpha = DIM_ALPHA
+        foodImage.alpha = DIM_ALPHA
+        resetBtn.hidden = false
     }
 
+    @IBAction func resetPressed(sender: AnyObject) {
+        
+        penalties = 0
+        monsterHappy = false
+        penalty1Img.alpha = DIM_ALPHA
+        penalty2Img.alpha = DIM_ALPHA
+        penalty3Img.alpha = DIM_ALPHA
+        monsterImage.playIdleAnimation("\(transferText)Idle")
+        startTimer()
+        resetBtn.hidden = true
+        
+    }
     
 
 

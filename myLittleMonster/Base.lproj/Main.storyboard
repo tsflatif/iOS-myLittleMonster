@@ -1,11 +1,87 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="N43-Bq-bdH">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
+        <!--Pick Character View Controller-->
+        <scene sceneID="V77-hT-xAi">
+            <objects>
+                <viewController id="N43-Bq-bdH" customClass="pickCharacterViewController" customModule="myLittleMonster" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="bIJ-4a-vVP"/>
+                        <viewControllerLayoutGuide type="bottom" id="jTI-Dn-Rrx"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="1GH-06-WTu">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg" translatesAutoresizingMaskIntoConstraints="NO" id="FYD-zw-IQZ">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pick a Character" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uTB-5L-dHz">
+                                <rect key="frame" x="237" y="40" width="126" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="9zd-1t-8yu">
+                                <rect key="frame" x="20" y="200" width="560" height="200"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ult-Ec-cl4">
+                                        <rect key="frame" x="0.0" y="0.0" width="255" height="200"/>
+                                        <state key="normal" image="golemIdle1"/>
+                                        <connections>
+                                            <action selector="golemPressed:" destination="N43-Bq-bdH" eventType="touchUpInside" id="Sbo-FS-4rz"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f8Z-7s-aOY">
+                                        <rect key="frame" x="305" y="0.0" width="255" height="200"/>
+                                        <state key="normal" image="minerIdle1"/>
+                                        <connections>
+                                            <action selector="minerPressed:" destination="N43-Bq-bdH" eventType="touchUpInside" id="TWe-ck-Zdp"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="jaY-6q-mN6"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="FYD-zw-IQZ" firstAttribute="leading" secondItem="1GH-06-WTu" secondAttribute="leading" id="1iD-V9-tCd"/>
+                            <constraint firstItem="uTB-5L-dHz" firstAttribute="top" secondItem="bIJ-4a-vVP" secondAttribute="bottom" constant="8" id="2cH-J8-f3Y"/>
+                            <constraint firstItem="uTB-5L-dHz" firstAttribute="centerX" secondItem="1GH-06-WTu" secondAttribute="centerX" id="3au-5T-bCT"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="9zd-1t-8yu" secondAttribute="trailing" id="6uH-GV-Olh"/>
+                            <constraint firstItem="FYD-zw-IQZ" firstAttribute="top" secondItem="1GH-06-WTu" secondAttribute="top" id="CVX-sJ-G4I"/>
+                            <constraint firstItem="9zd-1t-8yu" firstAttribute="leading" secondItem="1GH-06-WTu" secondAttribute="leadingMargin" id="Hcu-XL-oRr"/>
+                            <constraint firstItem="uTB-5L-dHz" firstAttribute="top" secondItem="bIJ-4a-vVP" secondAttribute="bottom" constant="20" id="I9o-2I-8Wz"/>
+                            <constraint firstItem="9zd-1t-8yu" firstAttribute="centerX" secondItem="1GH-06-WTu" secondAttribute="centerX" id="WW3-mg-0Ft"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="uTB-5L-dHz" secondAttribute="trailing" constant="217" id="cka-of-fBn"/>
+                            <constraint firstAttribute="trailing" secondItem="FYD-zw-IQZ" secondAttribute="trailing" id="rD7-vt-wzh"/>
+                            <constraint firstItem="9zd-1t-8yu" firstAttribute="centerY" secondItem="1GH-06-WTu" secondAttribute="centerY" id="rOf-nh-yzi"/>
+                            <constraint firstItem="uTB-5L-dHz" firstAttribute="leading" secondItem="1GH-06-WTu" secondAttribute="leadingMargin" constant="217" id="vWY-O9-lSO"/>
+                            <constraint firstItem="jTI-Dn-Rrx" firstAttribute="top" secondItem="FYD-zw-IQZ" secondAttribute="bottom" id="w4d-NT-xDC"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="2cH-J8-f3Y"/>
+                                <exclude reference="cka-of-fBn"/>
+                                <exclude reference="vWY-O9-lSO"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="goToMain" id="WQJ-X1-9ct"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XVl-dE-Ubd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="12" y="493"/>
+        </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -60,8 +136,8 @@
                                     </imageView>
                                 </subviews>
                             </stackView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="idle1" translatesAutoresizingMaskIntoConstraints="NO" id="sAX-Yn-e1U" customClass="MonsterImg" customModule="myLittleMonster" customModuleProvider="target">
-                                <rect key="frame" x="55" y="207" width="490" height="338"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="golemIdle1" translatesAutoresizingMaskIntoConstraints="NO" id="sAX-Yn-e1U" customClass="MonsterImg" customModule="myLittleMonster" customModuleProvider="target">
+                                <rect key="frame" x="76" y="207" width="588" height="338"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="588" id="IQ4-uR-lgt"/>
                                     <constraint firstAttribute="height" constant="338" id="Tvy-hb-Xdh"/>
@@ -92,6 +168,15 @@
                                     </mask>
                                 </variation>
                             </stackView>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cmL-uM-8bs">
+                                <rect key="frame" x="268" y="186" width="65" height="30"/>
+                                <state key="normal" title="RESTART">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="resetPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rRG-i7-LNX"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -106,11 +191,13 @@
                             <constraint firstItem="2zS-Do-OKa" firstAttribute="top" secondItem="KUT-JH-6R8" secondAttribute="bottom" constant="15" id="Z7z-R6-Rlg"/>
                             <constraint firstItem="2zS-Do-OKa" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="cn0-ra-Ihx"/>
                             <constraint firstItem="2zS-Do-OKa" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="dZv-Sl-h0Y"/>
+                            <constraint firstItem="cmL-uM-8bs" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="gnL-zT-vwl"/>
                             <constraint firstItem="KUT-JH-6R8" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" id="izk-bb-vwy"/>
                             <constraint firstItem="HMZ-7J-0cs" firstAttribute="centerX" secondItem="KUT-JH-6R8" secondAttribute="centerX" id="j3P-a2-468"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="sAX-Yn-e1U" secondAttribute="bottom" constant="55" id="jGi-JR-fPk"/>
                             <constraint firstItem="2zS-Do-OKa" firstAttribute="top" secondItem="KUT-JH-6R8" secondAttribute="bottom" constant="15" id="mA4-k6-jqM"/>
                             <constraint firstItem="sAX-Yn-e1U" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="70" id="mUc-Yb-94S"/>
+                            <constraint firstItem="cmL-uM-8bs" firstAttribute="top" secondItem="KUT-JH-6R8" secondAttribute="bottom" constant="105" id="nhF-rK-EX9"/>
                             <constraint firstItem="0QV-dj-x2p" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="ov3-pS-IbA"/>
                             <constraint firstItem="sAX-Yn-e1U" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="70" id="vIu-qW-dS0"/>
                             <constraint firstItem="F6d-AT-fMM" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="wzh-Zr-cCh"/>
@@ -149,20 +236,22 @@
                         <outlet property="penalty1Img" destination="3IU-jg-1qN" id="LSm-Nc-VoG"/>
                         <outlet property="penalty2Img" destination="gJ6-LU-KCO" id="avT-dR-XxH"/>
                         <outlet property="penalty3Img" destination="m1R-eg-z26" id="IlJ-u8-Ah4"/>
+                        <outlet property="resetBtn" destination="cmL-uM-8bs" id="9gS-1x-meH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="305" y="429"/>
+            <point key="canvasLocation" x="760" y="493"/>
         </scene>
     </scenes>
     <resources>
         <image name="bg" width="768" height="1024"/>
         <image name="food" width="95" height="98"/>
+        <image name="golemIdle1" width="889" height="615"/>
         <image name="ground" width="1444" height="151"/>
         <image name="heart" width="95" height="98"/>
-        <image name="idle1" width="889" height="615"/>
         <image name="livespanel" width="468" height="137"/>
+        <image name="minerIdle1" width="271" height="271"/>
         <image name="skull" width="95" height="98"/>
     </resources>
 </document>
